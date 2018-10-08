@@ -4,8 +4,11 @@
   "description": "Eine musikerfreundliche App zur Verwaltung von Songtexten",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "clean": "node scripts/clean.js",
+  "build": "npm run clean && parcel build src/*.html --public-url . --detailed-report --experimental-scope-hoisting",
+  "watch": "npm run clean && parcel watch src/*.html --public-url . --detailed-report --experimental-scope-hoisting",
+  "start": "parcel src/index.html --open"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RaphaelMenken/My-Songbook.git"
@@ -26,5 +29,8 @@
   "bugs": {
     "url": "https://github.com/RaphaelMenken/My-Songbook/issues"
   },
-  "homepage": "https://github.com/RaphaelMenken/My-Songbook#readme"
+  "homepage": "https://github.com/RaphaelMenken/My-Songbook#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.10.2"
+  }
 }
